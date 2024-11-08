@@ -1,7 +1,7 @@
-﻿using BulkyWeb_Temp.Models;
+﻿using BulkyBookWeb_Temp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BulkyWeb_Temp.Data
+namespace BulkyBookWeb_Temp.Data
 {
     public class ApplicationDbContext : DbContext
     {

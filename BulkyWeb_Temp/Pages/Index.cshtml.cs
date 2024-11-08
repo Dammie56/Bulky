@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BulkyWeb_Temp.Pages
+namespace BulkyBookWeb_Temp.Pages
 {
     public class IndexModel : PageModel
     {
