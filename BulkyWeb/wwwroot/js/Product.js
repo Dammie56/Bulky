@@ -23,6 +23,7 @@ function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": { url: '/admin/Product/GetAll' },
        
+
         "columns": [
             { data: 'title', "width": "20%" },
             { data: 'isbn', "width": "15%" },
@@ -36,7 +37,7 @@ function loadDataTable() {
                      
                     return `<div class="w-75 btn-group" role="group">
                     <a href="/admin/product/upsert?id=${data}" class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Edit</a>
-                    <a onClick=Delete('/admin/product/delete/${data}') class="btn btn-danger mx-2"> <i class="bi bi-trash2"></i> Delete</a>
+                     <a onClick=Delete('/admin/product/delete/${data}') class="btn btn-danger mx-2"> <i class="bi bi-trash2"></i> Delete</a>
                     </div>`
                 },
                 "width" : "25%"
@@ -61,16 +62,18 @@ function Delete(url) {
                 type: 'DELETE',
                 success: function (data) {
                     dataTable.ajax.reload();
-                toastr.success(data.message);
+                    toastr.success(data.message);
                 }
-                       
-                   
-                 
-            
+
+
+
+
             })
         }
     });
 }
+
+
 
 
 

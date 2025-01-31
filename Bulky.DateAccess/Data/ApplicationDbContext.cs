@@ -15,6 +15,11 @@ namespace BulkyBook.DataAccess.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<OrderHeader> OrderHeaders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +29,39 @@ namespace BulkyBook.DataAccess.Data
                 new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
                 new Category { Id = 3, Name = "History", DisplayOrder = 3 });
+
+            modelBuilder.Entity<Company>().HasData(
+               new Company
+               {
+                   Id = 1,
+                   Name = "Tech Solution",
+                   StreetAddress = "15, Micheal Shosanya, welder bustop, Ikotun Lagos.",
+                   City = "Lagos",
+                   PostalCode = "121213",
+                   State = "Lag",
+                   PhoneNumber = "08122116302"
+               },
+
+               new Company
+               {
+                   Id = 2,
+                   Name = "MachineTech Solution",
+                   StreetAddress = "15, Micheal Shosanya, welder bustop, Ikotun Lagos.",
+                   City = "Akure",
+                   PostalCode = "66677776",
+                   State = "Ondo",
+                   PhoneNumber = "08122116302"
+               },
+               new Company
+               {
+                   Id = 3,
+                   Name = "Big Baby Solution",
+                   StreetAddress = "15, Micheal Shosanya, welder bustop, Ikotun Lagos.",
+                   City = "Bariga",
+                   PostalCode = "221113",
+                   State = "Lagos",
+                   PhoneNumber = "08122116302"
+               });
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {
